@@ -1,5 +1,6 @@
 package med.meditec.api.controller;
 
+import jakarta.validation.Valid;
 import med.meditec.api.medico.DatosRegistroMedico;
 import med.meditec.api.medico.Medico;
 import med.meditec.api.medico.MedicoRepository;
@@ -22,7 +23,7 @@ public class MedicoController {
     el objeto DatosRegistroMedico.
     */
     @PostMapping
-    public void registrarMedico(@RequestBody DatosRegistroMedico datosRegistroMedico) {
+    public void registrarMedico(@RequestBody @Valid DatosRegistroMedico datosRegistroMedico) {
         System.out.println("El request llego correctamente");
         medicoRepository.save(new Medico(datosRegistroMedico));
     }
