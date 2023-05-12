@@ -2,10 +2,7 @@ package med.meditec.api.controller;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import med.meditec.api.paciente.DatosListadoPaciente;
-import med.meditec.api.paciente.DatosRegistroPaciente;
-import med.meditec.api.paciente.Paciente;
-import med.meditec.api.paciente.PacienteRepository;
+import med.meditec.api.paciente.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -25,6 +22,18 @@ public class PacienteController {
     }
     @GetMapping
     public Page<DatosListadoPaciente> listaPacientes(@PageableDefault(size = 5,sort = "nombre") Pageable pageable){
-        return pacienteRepository.findAll(pageable).map(DatosListadoPaciente::new);
+        return pacienteRepository.findByActivoTrue(pageable).map(DatosListadoPaciente::new);
+    }
+    @PutMapping
+    @Transactional
+    public void actualizarPaciente(@RequestBody @Valid DatosActualizarPaciente datosActualizarPaciente){
+        Paciente paciente= pacienteRepository.getReferenceById(datosActualizarPaciente.id());
+        paciente.actualizarDatos(datosActualizarPaciente);
+    }
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void eliminarPaciente(@PathVariable Long id) {
+        Paciente paciente= pacienteRepository.getReferenceById(id);
+        paciente.desactivarPaciente();
     }
 }
