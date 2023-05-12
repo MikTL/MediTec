@@ -7,6 +7,8 @@ import med.meditec.api.medico.DatosRegistroMedico;
 import med.meditec.api.medico.Medico;
 import med.meditec.api.medico.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,7 +32,7 @@ public class MedicoController {
         medicoRepository.save(new Medico(datosRegistroMedico));
     }
     @GetMapping
-    public List<DatosListadoMedico> listaMedicos(){
-        return medicoRepository.findAll().stream().map(DatosListadoMedico::new).toList();
+    public Page<DatosListadoMedico> listaMedicos(Pageable pageable){
+        return medicoRepository.findAll(pageable).map(DatosListadoMedico::new);
     }
 }
