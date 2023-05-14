@@ -1,7 +1,7 @@
-package med.meditec.api.medico;
+package med.meditec.api.domain.medico;
 
 import jakarta.validation.constraints.NotNull;
-import med.meditec.api.direccion.DatosDireccion;
+import med.meditec.api.domain.direccion.DatosDireccion;
 
 public record DatosActualizarMedico(
         @NotNull Long id,

@@ -1,11 +1,11 @@
-package med.meditec.api.paciente;
+package med.meditec.api.domain.paciente;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.meditec.api.direccion.Direccion;
+import med.meditec.api.domain.direccion.Direccion;
 
 @Table(name = "pacientes")
 @Entity(name = "Paciente")

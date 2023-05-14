@@ -1,4 +1,4 @@
-package med.meditec.api.paciente;
+package med.meditec.api.domain.paciente;
 
 public record DatosListadoPaciente(Long id, String nombre, String email, String documento) {
     public DatosListadoPaciente(Paciente paciente){

@@ -1,4 +1,4 @@
-package med.meditec.api.medico;
+package med.meditec.api.domain.medico;
 
 public enum Especialidad {
     ORTOPEDIA,

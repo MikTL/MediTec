@@ -1,11 +1,11 @@
-package med.meditec.api.medico;
+package med.meditec.api.domain.medico;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.meditec.api.direccion.Direccion;
+import med.meditec.api.domain.direccion.Direccion;
 
 //JPA
 @Table(name = "medicos")

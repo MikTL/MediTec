@@ -1,6 +1,6 @@
-package med.meditec.api.paciente;
+package med.meditec.api.domain.paciente;
 
-import med.meditec.api.direccion.DatosDireccion;
+import med.meditec.api.domain.direccion.DatosDireccion;
 
 public record DatosRespuestaPaciente(
         Long id,

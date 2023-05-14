@@ -1,4 +1,4 @@
-package med.meditec.api.direccion;
+package med.meditec.api.domain.direccion;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
