@@ -2,9 +2,8 @@ package med.meditec.api.controller;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import med.meditec.api.direccion.DatosDireccion;
-import med.meditec.api.medico.Medico;
-import med.meditec.api.paciente.*;
+import med.meditec.api.domain.direccion.DatosDireccion;
+import med.meditec.api.domain.paciente.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

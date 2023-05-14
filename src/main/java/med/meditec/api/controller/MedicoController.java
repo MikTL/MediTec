@@ -2,8 +2,8 @@ package med.meditec.api.controller;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import med.meditec.api.direccion.DatosDireccion;
-import med.meditec.api.medico.*;
+import med.meditec.api.domain.direccion.DatosDireccion;
+import med.meditec.api.domain.medico.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
-import java.util.List;
 
 @RestController
 @RequestMapping("/medicos")
@@ -57,7 +56,7 @@ public class MedicoController {
         return ResponseEntity.created(uri).body(datosRespuestaMedico);
     }
     @GetMapping
-    public ResponseEntity<Page<DatosListadoMedico>> listaMedicos( @PageableDefault(size = 3) Pageable pageable){
+    public ResponseEntity<Page<DatosListadoMedico>> listaMedicos(@PageableDefault(size = 3) Pageable pageable){
         //return medicoRepository.findAll(pageable).map(DatosListadoMedico::new);
         return ResponseEntity.ok(medicoRepository.findByActivoTrue(pageable).map(DatosListadoMedico::new));
     }
