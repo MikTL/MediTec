@@ -2,6 +2,9 @@ package med.meditec.api.controller;
 
 import jakarta.validation.Valid;
 import med.meditec.api.domain.usuario.DatosAutenticacionUsuario;
+import med.meditec.api.domain.usuario.Usuario;
+import med.meditec.api.infra.security.DatosJWTToken;
+import med.meditec.api.infra.security.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,15 +20,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class AutenticacionController {
     @Autowired
     private AuthenticationManager authenticationManager;
+    @Autowired
+    private TokenService tokenService;
 
     @PostMapping
     public ResponseEntity autenticarUsuario(@RequestBody @Valid DatosAutenticacionUsuario datosUsuario) {
 
-        Authentication token = new UsernamePasswordAuthenticationToken(
+        Authentication AuthToken = new UsernamePasswordAuthenticationToken(
                 datosUsuario.nombre(),
                 datosUsuario.clave());
-        authenticationManager.authenticate(token);
-        return ResponseEntity.ok().build();
+        var usuarioAutenticado = authenticationManager.authenticate(AuthToken);
+        var JWTtoken= tokenService.generarToken((Usuario) usuarioAutenticado.getPrincipal());
+        return ResponseEntity.ok(new DatosJWTToken(JWTtoken));
     }
 
 }
