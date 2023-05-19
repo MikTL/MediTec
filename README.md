@@ -4,6 +4,14 @@ MediTec es una API REST que proporciona acceso a los datos de una clínica médi
 
 La API se implementa utilizando el framework Spring Boot. Spring Boot es un marco de trabajo que facilita la creación de aplicaciones Java de producción.
 
+## Tecnologías usadas
+<div align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="40" width="52" alt="java logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" height="40" width="52" alt="spring logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="40" width="52" alt="mysql logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" height="40" width="52" alt="intellij logo"  />
+</div>
+
 ## Endpoints
 La API proporciona los siguientes endpoints:
 
