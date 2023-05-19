@@ -12,10 +12,15 @@ La API se implementa utilizando el framework Spring Boot. Spring Boot es un marc
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" height="40" width="52" alt="intellij logo"  />
 </div>
 
+* Java JDK 17
+* Spring Boot 3.0.6
+* MySql 8.0.33
+* IntelliJ Community Edition 2023
+
 ## Endpoints
 La API proporciona los siguientes endpoints:
 
-1. Crear (**Create**)
+1. Guardar Pacientes y Medicos en la Base de Datos (**Create**)
     * /pacientes - (POST)
         <details open>
         <summary>Ejemplo del cuerpo de la solicitud (Payload)</summary>
@@ -69,7 +74,7 @@ La API proporciona los siguientes endpoints:
 
     **_/medicos?size=5&page=1&sort=nombre_**
 
-3. Actualizar (**Update**)
+3. Actualizar datos de Pacientes y Medicos (**Update**)
     * /pacientes - (PUT)
     * /medicos - (PUT)
       <details>
@@ -82,7 +87,7 @@ La API proporciona los siguientes endpoints:
       }
       ```
     </details>
-4. Borrar Logicamente (**Delete**)
+4. Borrar Logicamente (No se borra registros de la  base de datos) (**Delete**)
     * /pacientes/{id}
     * /medicos/{id}
 
