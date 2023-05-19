@@ -54,8 +54,8 @@ La API proporciona los siguientes endpoints:
 2. Leer (**Read**)
     * /pacientes - (GET)
     * /medicos - (GET)
-    * /pacientes/{id} - (GET) Listado de un paciente en específico.
-    * /medicos/{id} - (GET) Listado de un médico en específico.
+    * /pacientes/{id} - (GET) Ver un paciente en específico.
+    * /medicos/{id} - (GET) Ver un médico en específico.
 
     Tambien es posible usar query params para filtrar o paginar:
 
